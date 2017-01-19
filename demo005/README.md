@@ -1,7 +1,7 @@
 编程式导航:
 
-一、传值：注意 这里是$router不是$route，搞了大半天
-########
+##一、传值：注意 这里是$router不是$route，搞了大半天
+
 ` `` js
     export default{
         data(){
@@ -22,8 +22,8 @@
         },
     }
 ` ``
-二、取值：注意 取值的时候是这个$route
-########
+##二、取值：注意 取值的时候是这个$route
+
 ` `` js
     export default {
         name: 'topnav',
