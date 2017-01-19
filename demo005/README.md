@@ -1,6 +1,7 @@
 编程式导航:
 
 一、传值：
+<!--
 <script>
     export default{
         data(){
@@ -23,7 +24,7 @@
         },
     }
 </script>
-
+-->
 二、取值
 <script>
     export default {
@@ -41,3 +42,5 @@
         },
     }
 </script>
+
+![image](https://github.com/jiekekeji/MVueWebpack/blob/master/demo005/preview/123.gif)
