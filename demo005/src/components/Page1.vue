@@ -22,10 +22,16 @@
         },
         components: {},
         methods: {
-            skip2Page2:function () {
-                console.log(this.$router);
-                this.$router.push({ name: 'Page2'})
+            skip2Page2: function () {
+                //注意 这里是$router不是$route，搞了大半天
+
+                //1、直接跳转到Page2
+//                this.$router.push('Page2');
+                //2、按照路由的Path带参数跳转到Page2
+                this.$router.push({path: 'Page2', query: {userId: 123456}});
+                //3、按照路由的命名跳转
+//                this.$router.push({name: 'Page2', params: {userId: 123}});
             }
-        }
+        },
     }
 </script>

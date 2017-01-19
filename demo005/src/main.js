@@ -20,6 +20,7 @@ const routes = [{
     path: '/Page1',
     component: Page1
 }, {
+    name: 'Page2',
     path: '/Page2',
     component: Page2
 }, {
