@@ -1,11 +1,12 @@
 <template>
     <div class="nav">
         这是Page2组件
-        <button v-on:click="skip2Page3">跳转到page3</button>
+        <button v-on:click="skip2Page3">改变Page1组件中msg的值</button>
     </div>
 </template>
 
 <script>
+    import store from '../store/store'
     export default {
         name: 'topnav',
         data () {
@@ -15,7 +16,8 @@
         },
         methods: {
             skip2Page3: function () {
-                this.$router.push({path: 'Page3'});
+                store.commit('increment');
+                console.log(store.state.count);
             }
         },
     }

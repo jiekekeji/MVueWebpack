@@ -1,6 +1,6 @@
 <template>
     <div class="content">
-        这是page1
+        这是page1 msg={{msg}}
         <button v-on:click="skip2Page2">跳转到page2</button>
     </div>
 </template>
@@ -15,13 +15,13 @@
     }
 </style>
 <script>
-    import $ from 'jquery';
+    import store from '../store/store';
 
     export default{
         data(){
             return {
-                msg: 'hello vue'
-            }
+                msg: store.state.count
+        }
         },
         components: {},
         methods: {
@@ -30,7 +30,6 @@
             }
         },
         created () {
-            console.log($);
         },
     }
 </script>
