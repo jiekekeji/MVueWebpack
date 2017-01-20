@@ -1,6 +1,6 @@
 <template>
     <div class="content">
-        这是page1 msg={{msg}}
+        这是page1 msg={{count () }}
         <button v-on:click="skip2Page2">跳转到page2</button>
     </div>
 </template>
@@ -24,6 +24,11 @@
         }
         },
         components: {},
+        computed:{
+            count () {
+                return store.state.count
+            }
+        },
         methods: {
             skip2Page2: function () {
                 this.$router.push({path: 'Page2'});
