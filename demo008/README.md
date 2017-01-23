@@ -67,3 +67,5 @@ export default store;
         },
     }
 ```
+
+![image](https://github.com/jiekekeji/MVueWebpack/blob/master/demo006/preview/demo008.gif)
