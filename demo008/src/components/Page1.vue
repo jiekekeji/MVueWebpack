@@ -20,11 +20,13 @@
     export default{
         data(){
             return {
+                msg: store.state.count
             }
         },
         components: {},
         computed: {
             count () {
+                console.log('状态值发生改变:' + store.state.count);
                 return store.state.count
             }
         },
