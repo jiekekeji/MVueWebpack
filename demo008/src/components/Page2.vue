@@ -16,7 +16,11 @@
         },
         methods: {
             skip2Page3: function () {
+                //提交mutations
                 store.commit('increment');
+                //或者直接改变count的值
+                store.state.count++;
+
                 console.log(store.state.count);
             }
         },

@@ -1,6 +1,6 @@
 <template>
     <div class="content">
-        这是page1 msg={{count () }}
+        这是page1组件 msg={{count}}
         <button v-on:click="skip2Page2">跳转到page2</button>
     </div>
 </template>
@@ -20,11 +20,10 @@
     export default{
         data(){
             return {
-                msg: store.state.count
-        }
+            }
         },
         components: {},
-        computed:{
+        computed: {
             count () {
                 return store.state.count
             }
