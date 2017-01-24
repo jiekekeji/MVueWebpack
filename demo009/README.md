@@ -112,4 +112,4 @@ export default store;
     </script>
 ```
 
-![image](https://github.com/jiekekeji/MVueWebpack/blob/master/demo008/preview/demo009.gif)
+![image](https://github.com/jiekekeji/MVueWebpack/blob/master/demo009/preview/demo009.gif)
