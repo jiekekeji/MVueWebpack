@@ -1,6 +1,6 @@
 <template>
     <div class="content">
-        这是page1 msg={{count () }}
+        这是page1组件 msg={{count}}
         <button v-on:click="skip2Page2">跳转到page2</button>
     </div>
 </template>
@@ -21,11 +21,12 @@
         data(){
             return {
                 msg: store.state.count
-        }
+            }
         },
         components: {},
-        computed:{
+        computed: {
             count () {
+                console.log('状态值发生改变:' + store.state.count);
                 return store.state.count
             }
         },

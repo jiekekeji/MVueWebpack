@@ -1,14 +1,20 @@
+<<<<<<< HEAD
 // http://eslint.org/docs/user-guide/configuring
 
+=======
+>>>>>>> origin/master
 module.exports = {
   root: true,
   parser: 'babel-eslint',
   parserOptions: {
     sourceType: 'module'
   },
+<<<<<<< HEAD
   env: {
     browser: true,
   },
+=======
+>>>>>>> origin/master
   // https://github.com/feross/standard/blob/master/RULES.md#javascript-standard-style
   extends: 'standard',
   // required to lint *.vue files

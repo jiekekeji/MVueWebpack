@@ -1,4 +1,5 @@
 var path = require('path')
+<<<<<<< HEAD
 var utils = require('./utils')
 var webpack = require('webpack')
 var config = require('../config')
@@ -6,16 +7,29 @@ var merge = require('webpack-merge')
 var baseWebpackConfig = require('./webpack.base.conf')
 var HtmlWebpackPlugin = require('html-webpack-plugin')
 var ExtractTextPlugin = require('extract-text-webpack-plugin')
+=======
+var config = require('../config')
+var utils = require('./utils')
+var webpack = require('webpack')
+var merge = require('webpack-merge')
+var baseWebpackConfig = require('./webpack.base.conf')
+var ExtractTextPlugin = require('extract-text-webpack-plugin')
+var HtmlWebpackPlugin = require('html-webpack-plugin')
+>>>>>>> origin/master
 var env = process.env.NODE_ENV === 'testing'
   ? require('../config/test.env')
   : config.build.env
 
 var webpackConfig = merge(baseWebpackConfig, {
   module: {
+<<<<<<< HEAD
     rules: utils.styleLoaders({
       sourceMap: config.build.productionSourceMap,
       extract: true
     })
+=======
+    loaders: utils.styleLoaders({ sourceMap: config.build.productionSourceMap, extract: true })
+>>>>>>> origin/master
   },
   devtool: config.build.productionSourceMap ? '#source-map' : false,
   output: {
@@ -23,6 +37,15 @@ var webpackConfig = merge(baseWebpackConfig, {
     filename: utils.assetsPath('js/[name].[chunkhash].js'),
     chunkFilename: utils.assetsPath('js/[id].[chunkhash].js')
   },
+<<<<<<< HEAD
+=======
+  vue: {
+    loaders: utils.cssLoaders({
+      sourceMap: config.build.productionSourceMap,
+      extract: true
+    })
+  },
+>>>>>>> origin/master
   plugins: [
     // http://vuejs.github.io/vue-loader/en/workflow/production.html
     new webpack.DefinePlugin({
@@ -33,10 +56,16 @@ var webpackConfig = merge(baseWebpackConfig, {
         warnings: false
       }
     }),
+<<<<<<< HEAD
     // extract css into its own file
     new ExtractTextPlugin({
       filename: utils.assetsPath('css/[name].[contenthash].css')
     }),
+=======
+    new webpack.optimize.OccurrenceOrderPlugin(),
+    // extract css into its own file
+    new ExtractTextPlugin(utils.assetsPath('css/[name].[contenthash].css')),
+>>>>>>> origin/master
     // generate dist index.html with correct asset hash for caching.
     // you can customize output by editing /index.html
     // see https://github.com/ampedandwired/html-webpack-plugin
@@ -97,9 +126,12 @@ if (config.build.productionGzip) {
   )
 }
 
+<<<<<<< HEAD
 if (config.build.bundleAnalyzerReport) {
   var BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin
   webpackConfig.plugins.push(new BundleAnalyzerPlugin())
 }
 
+=======
+>>>>>>> origin/master
 module.exports = webpackConfig

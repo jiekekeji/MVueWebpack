@@ -9,7 +9,11 @@ module.exports = {
 
   selenium: {
     start_process: true,
+<<<<<<< HEAD
     server_path: require('selenium-server').path,
+=======
+    server_path: 'node_modules/selenium-server/lib/runner/selenium-server-standalone-2.53.1.jar',
+>>>>>>> origin/master
     host: '127.0.0.1',
     port: 4444,
     cli_args: {
