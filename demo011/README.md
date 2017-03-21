@@ -1,7 +1,8 @@
-#<h1>父子组件之间的传值</h1>
+#父子组件之间的传值
 
   ### 父传递给子：
   <p>子组件的代码:</p>
+  </code></pre>
   '
     <template>
         <div class="nav">
@@ -9,7 +10,7 @@
             <div><label>接收父组件的传值:</label>{{inputValue}}</div>
         </div>
     </template>
-    '
+    
     <script>
         export default {
             data () {
