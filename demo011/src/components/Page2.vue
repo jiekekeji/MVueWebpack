@@ -1,32 +1,20 @@
 <template>
     <div class="nav">
-        这是Page2组件
-        <input v-model="inputValue">
-        <button @click="toParent">传值给父元素</button>
+        <h1>这是Page2组件</h1>
+        <div><label>接收父组件的传值:</label>{{inputValue}}</div>
     </div>
 </template>
 
 <script>
     export default {
         data () {
-            return {
-                msg: 'Welcome to Your Vue.js App',
-            }
+            return {}
         },
-        methods: {
-            toParent(){
-                this.$emit('child-say', "123");
-            }
-        },
+        methods: {},
         props: {
             inputValue: ''
         },
-        watch: {
-            inputValue: function () {
-                console.log(this.inputValue);
-
-            }
-        }
+        watch: {}
     }
 </script>
 
@@ -35,7 +23,7 @@
         height: 100px;
         width: 100%;
         text-align: center;
-        line-height: 100px;
+        line-height: 50px;
         background-color: antiquewhite;
     }
 </style>

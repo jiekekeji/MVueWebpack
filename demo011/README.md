@@ -1,5 +1,7 @@
 <h1>父子组件之间的传值</h1>
 
+![image](https://github.com/jiekekeji/MVueWebpack/blob/master/demo011/preview/demo011.gif)
+
 <h3>父传递给子：</h3>
   <h4>子组件的代码:</h4>
   <pre><code>
