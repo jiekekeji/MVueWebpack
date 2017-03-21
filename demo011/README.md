@@ -26,7 +26,6 @@
            &lt;page2 :inputValue="p2cValue"&gt;&lt;/page2&gt;
        &lt;/div&gt;
    &lt;/template&gt;
-   
    &lt;script&gt;
        //引入子组件
        import page2 from '../components/Page2.vue';
