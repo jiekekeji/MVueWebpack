@@ -58,7 +58,6 @@
          &lt;div&gt;&lt;label&gt;传值给父组件:&lt;/label&gt;&lt;input v-model="c32pValue"&gt;&lt;/div&gt;
      &lt;/div&gt;
  &lt;/template&gt;
- 
  &lt;script&gt;
      export default{
          data(){
