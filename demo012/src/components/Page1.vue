@@ -4,7 +4,9 @@
             <li v-for="item in list" style="height: auto;width: 100%;text-align: center;line-height: 50px;background-color: antiquewhite;">
                 {{item.id}}
                 <ul>
-                    <li v-for="chil in item.chis" style="height: auto;width: 100%;text-align: center;line-height: 50px;background-color: gainsboro;">{{chil.id}}</li>
+                    <li @click="openTab(chil)" v-for="chil in item.chis" style="height: auto;width: 100%;text-align: center;line-height: 50px;background-color: gainsboro;">
+                        {{chil.id}}
+                    </li>
                 </ul>
             </li>
         </ul>
@@ -66,6 +68,9 @@
         },
         computed: {},
         methods: {
+            openTab(){
+                window.open();
+            }
         },
         created () {
         },
