@@ -1,7 +1,11 @@
 <template>
     <div class="content">
-        <div @click="openDialog">显示</div>
-        <div @click="hideDialog">隐藏</div>
+        <div @click="openDialog" style="height: 50px;text-align: center;line-height: 50px;background-color: azure">
+            显示
+        </div>
+        <div @click="hideDialog" style="height: 50px;text-align: center;line-height: 50px;background-color: beige">
+            隐藏
+        </div>
     </div>
 </template>
 
