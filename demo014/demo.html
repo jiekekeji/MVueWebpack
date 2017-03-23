@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+</head>
+<body>
+
+<div id="app">
+    <render-teample>
+        render function
+
+    </render-teample>
+</div>
+
+<script>
+    Vue.component('render-teample', {
+        render: function (createElement) {
+            console.log(this.$slots.default);
+            return createElement(
+                'h' + this.level,
+                this.$slots.default
+            )
+        },
+        props: {
+            level: {
+                type: Number,
+                required: true
+            }
+        }
+
+    })
+    var app = new Vue({
+        el: "#app",
+
+    });
+
+
+</script>
+
+</body>
+</html>
