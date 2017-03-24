@@ -3,7 +3,6 @@
         <h2>我是子组件component001,我没有插槽</h2>
     </div>
 </template>
-
 <script>
     export default{
         data(){
