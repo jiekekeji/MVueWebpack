@@ -10,17 +10,20 @@ import VueRouter from 'vue-router'
 
 //引入组件
 import Page1 from '../components/Page1.vue'
-
+import Page2 from '../components/Page2.vue'
 
 Vue.use(VueRouter);
 
 //路由映射配置
 const routes = [{
     path: '/',
-    component: Page1
+    component: Page2
 }, {
     path: '/Page1',
     component: Page1,
+}, {
+    path: '/Page2',
+    component: Page2,
 }];
 
 //创建实例
