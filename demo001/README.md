@@ -2,11 +2,11 @@
 
 ###一、安装node,npm.环境(mac)
 
-1、下载node:地址:https://nodejs.org/en/download/,这里下载的是macOS Binaries (.tar.gz)。
+1、下载node:地址:https://nodejs.org/en/download/, 这里下载的是macOS Binaries (.tar.gz)。
 
 2、安装node:将下载的.tar.gz文件解压，将解压的文件夹放在某个目录下,如这放在/Users/jack/devtools/目录下:
 
-    icon-install-dir.png
+    ![image](https://github.com/jiekekeji/MVueWebpack/blob/master/demo001/preview/icon-install-dir.png)
 
 3、打开终端：
 
