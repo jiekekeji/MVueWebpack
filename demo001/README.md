@@ -39,11 +39,19 @@ vue脚手架vue-cli的使用
     
    终端输入:npm -v，提示版本号3.10.10，ok了。
     
-![image](https://github.com/jiekekeji/MVueWebpack/blob/master/demo001/preview/icon-node-npm.png)      
+![image](https://github.com/jiekekeji/MVueWebpack/blob/master/demo001/preview/icon-node-npm.png)
+      
+   安装cnpm，根据[淘宝 NPM 镜像](http://npm.taobao.org/)的使用说明：
+   
+   终端输入:npm install -g cnpm --registry=https://registry.npm.taobao.org
+   
+   安装完成后输入：cnpm -v 验证是否安装成功。
      
 6、至此node、npm安装完成。
 
 
+二、安装vue脚手架vue-cli.环境(mac)
+----
 
 
 2、全局安装：vue-cli
