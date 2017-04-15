@@ -10,34 +10,34 @@
 
 3、打开终端：
 
-    输入node -v,提示 -bash: node: command not found，貌似不行；
+   输入node -v,提示 -bash: node: command not found，貌似不行；
     
 ![image](https://github.com/jiekekeji/MVueWebpack/blob/master/demo001/preview/icon-command-node.png)    
      
-    进入到第二步解压的目录 cd /Users/jack/devtools/node-v6.10.2/bin/ ,
-    执行:./node -v,ok了。
+   进入到第二步解压的目录 cd /Users/jack/devtools/node-v6.10.2/bin/ ,
+   执行:./node -v,ok了。
     
 ![image](https://github.com/jiekekeji/MVueWebpack/blob/master/demo001/preview/icon-command-v.png)     
     
 4、在其他目录下可执行node命令的环境变量配置:
    
-    4.1、进入当前用户跟目录,终端输入:cd ~
+   4.1、进入当前用户跟目录,终端输入:cd ~
     
-    4.2、编辑.bash_profile文件:vim .bash_profile；.bash_profile 文件是隐藏的文件，可通过ls -al查看。
+   4.2、编辑.bash_profile文件:vim .bash_profile；.bash_profile 文件是隐藏的文件，可通过ls -al查看。
     
-    4.3、在.bash_profile语句中加入如下语句:export PATH=$PATH:/Users/jack/devtools/node-v6.10.2/bin,保存退出。
+   4.3、在.bash_profile语句中加入如下语句:export PATH=$PATH:/Users/jack/devtools/node-v6.10.2/bin,保存退出。
     
 ![image](https://github.com/jiekekeji/MVueWebpack/blob/master/demo001/preview/icon-node-path.png)      
     
-    4.4、让刚才配置的语句立即生效:source .bash_profile 
+   4.4、让刚才配置的语句立即生效:source .bash_profile 
     
 ![image](https://github.com/jiekekeji/MVueWebpack/blob/master/demo001/preview/icon-node-path-ok.png)      
 
 5、试试npm:
     
-    终端输入:npm -v，提示版本号3.10.10，ok了。
+   终端输入:npm -v，提示版本号3.10.10，ok了。
     
-    icon-node-npm.png
+![image](https://github.com/jiekekeji/MVueWebpack/blob/master/demo001/preview/icon-node-npm.png)      
      
 6、至此node、npm安装完成。
 
