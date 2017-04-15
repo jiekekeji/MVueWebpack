@@ -1,6 +1,6 @@
-#vue脚手架vue-cli的使用
+#vue脚手架vue-cli的使用#
 
-###一、安装node,npm.环境(mac)
+###一、安装node,npm.环境(mac)###
 
 1、下载node:地址:https://nodejs.org/en/download/, 这里下载的是macOS Binaries (.tar.gz)。
 
@@ -12,12 +12,12 @@
 
     输入node -v,提示 -bash: node: command not found，貌似不行；
     
-    icon-command-node.png
+![image](https://github.com/jiekekeji/MVueWebpack/blob/master/demo001/preview/icon-command-node.png)    
      
     进入到第二步解压的目录 cd /Users/jack/devtools/node-v6.10.2/bin/ ,
     执行:./node -v,ok了。
     
-    icon-command-v.png
+![image](https://github.com/jiekekeji/MVueWebpack/blob/master/demo001/preview/icon-command-v.png)     
     
 4、在其他目录下可执行node命令的环境变量配置:
    
@@ -27,11 +27,11 @@
     
     4.3、在.bash_profile语句中加入如下语句:export PATH=$PATH:/Users/jack/devtools/node-v6.10.2/bin,保存退出。
     
-    icon-node-path.png
+![image](https://github.com/jiekekeji/MVueWebpack/blob/master/demo001/preview/icon-node-path.png)      
     
     4.4、让刚才配置的语句立即生效:source .bash_profile 
     
-    icon-node-path-ok.png
+![image](https://github.com/jiekekeji/MVueWebpack/blob/master/demo001/preview/icon-node-path-ok.png)      
 
 5、试试npm:
     
