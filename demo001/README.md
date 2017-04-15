@@ -1,4 +1,4 @@
-vue脚手架vue-cli的使用
+vue vue-cli的使用
 ====
 
 一、安装node,npm.环境(mac)
@@ -53,13 +53,38 @@ vue脚手架vue-cli的使用
 二、安装vue脚手架vue-cli.环境(mac)
 ----
 
+1、全局安装：vue-cli
+   
+   ```
+   cnpm install -g vue-cli
+   ````
+2、创建项目：创建名为 demo001 的项目，cd到某个目录下,执行如下命令，然后一直回车即可。
 
-2、全局安装：vue-cli
-   npm install -g vue-cli
+   ````
+   vue init webpack demo001
+   ````
+   
+   完成后用WebStorm打开的目录结构，如下图：
+   
+![image](https://github.com/jiekekeji/MVueWebpack/blob/master/demo001/preview/icon-project-struct.png)
 
-3、cd到想要创建新项目的文件夹下，然后使用vue init指令，
-   vue init 模板类型 项目名称
-   如:vue init webpack demo001
+   安装相关依赖:cd 到demo001目录，执行：
+   
+   ````
+   cnpm install
+   ````
+
+3、运行项目：在demo001目录下执行:
+
+   ````
+   npm run dev
+   ````
+   
+   浏览器打开：http://localhost:8080,
+    
+![image](https://github.com/jiekekeji/MVueWebpack/blob/master/demo001/preview/icon-browser-hello.png)
+
+   
 
 4、cd 到 demo001目录安装项目的依赖：
    npm install
