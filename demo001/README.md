@@ -1,6 +1,8 @@
-#vue脚手架vue-cli的使用#
+vue脚手架vue-cli的使用
+====
 
-###一、安装node,npm.环境(mac)###
+一、安装node,npm.环境(mac)
+----
 
 1、下载node:地址:https://nodejs.org/en/download/, 这里下载的是macOS Binaries (.tar.gz)。
 
