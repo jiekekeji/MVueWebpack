@@ -85,7 +85,7 @@ vue vue-cli的使用
 ![image](https://github.com/jiekekeji/MVueWebpack/blob/master/demo001/preview/icon-browser-hello.png)
 
 
-三、添砖加瓦，完成小功能。
+三、试着加些页面。
 ----
 
 1、先安装路由:在demo001目录下 
