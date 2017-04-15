@@ -96,7 +96,7 @@ cnpm install vue-router --save
 
 2、需求：实现页面跳转：
 
-![image](https://github.com/jiekekeji/MVueWebpack/blob/master/demo001/preview/icon-browser-hello.png)
+![image](https://github.com/jiekekeji/MVueWebpack/blob/master/demo001/preview/icon-xiaoguo.png)
 
 
 3、如果对eslint不是很熟悉，先关闭eslint,文件路径：./build/webpack.base.conf.js，注释掉如下的内容：
