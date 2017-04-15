@@ -84,41 +84,44 @@ vue vue-cli的使用
     
 ![image](https://github.com/jiekekeji/MVueWebpack/blob/master/demo001/preview/icon-browser-hello.png)
 
-   
 
-4、cd 到 demo001目录安装项目的依赖：
-   npm install
-   然后会发现有 node_modules的文件夹
+三、添砖加瓦，完成小功能。
+----
 
-5、运行vue环境：npm run dev
+1、先安装路由:在demo001目录下 
 
-6、浏览器打开：http://localhost:8080
-
-
-# demo001 项目的启动
-
-> A Vue.js project
-
-## Build Setup
-
-``` bash
-# install dependencies
-npm install
-
-# serve with hot reload at localhost:8080
-npm run dev
-
-# build for production with minification
-npm run build
-
-# run unit tests
-npm run unit
-
-# run e2e tests
-npm run e2e
-
-# run all tests
-npm test
+```
+cnpm install vue-router --save
 ```
 
-For detailed explanation on how things work, checkout the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+2、需求：实现页面跳转：
+
+![image](https://github.com/jiekekeji/MVueWebpack/blob/master/demo001/preview/icon-browser-hello.png)
+
+
+3、如果对eslint不是很熟悉，先关闭eslint,文件路径：./build/webpack.base.conf.js，注释掉如下的内容：
+
+```
+    preLoaders: [
+      // {
+      //   test: /\.vue$/,
+      //   loader: 'eslint',
+      //   include: [
+      //     path.join(projectRoot, 'src')
+      //   ],
+      //   exclude: /node_modules/
+      // },
+      // {
+      //   test: /\.js$/,
+      //   loader: 'eslint',
+      //   include: [
+      //     path.join(projectRoot, 'src')
+      //   ],
+      //   exclude: /node_modules/
+      // }
+    ],
+```
+
+4、改造后的文件：
+
+![image](https://github.com/jiekekeji/MVueWebpack/blob/master/demo001/preview/icon-code.png)
