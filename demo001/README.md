@@ -6,7 +6,7 @@
 
 2、安装node:将下载的.tar.gz文件解压，将解压的文件夹放在某个目录下,如这放在/Users/jack/devtools/目录下:
 
-    ![image](https://github.com/jiekekeji/MVueWebpack/blob/master/demo001/preview/icon-install-dir.png)
+![image](https://github.com/jiekekeji/MVueWebpack/blob/master/demo001/preview/icon-install-dir.png)
 
 3、打开终端：
 
