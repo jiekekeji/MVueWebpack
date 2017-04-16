@@ -11,5 +11,7 @@ export default new Router({
       name: 'Hello',
       component: Hello
     }
-  ]
+  ],
+  // 默认为hash模式
+  mode: 'history',
 })
