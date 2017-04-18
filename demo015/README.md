@@ -215,10 +215,9 @@ vue-cli项目的打包部署
 (2)、在根目录下面编写.htaccess文件，这里根目录为 ./htdocs.没有该文件就新建文件名为 .htaccess 的文件。
      加入下面的内容：当404时，显示的是根目录下index.html.
 
-     ```
+  ```
      ErrorDocument 404 /index.html
-
-     ```
+  ```
 
 编辑完成，保存文件。
 
