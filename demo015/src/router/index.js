@@ -25,5 +25,6 @@ export default new Router({
     },
   ],
   // 默认为hash模式
-  // mode: 'history',
+  mode: 'history',
+  base: '/webapp/'
 })
