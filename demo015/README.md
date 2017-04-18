@@ -154,13 +154,15 @@ vue-cli项目的打包部署
 4、404配置示例：
 ----
 
-4.1、apache服务器，版本：httpd-2.4.25-x64，下载地址： http://www.apachehaus.com/cgi-bin/download.plx  ，下载完成后解压到某个目录下即可。
+4.1、apache服务器，
+------
+   版本：httpd-2.4.25-x64，下载地址： http://www.apachehaus.com/cgi-bin/download.plx  ，下载完成后解压到某个目录下即可。
 
 ![image](https://github.com/jiekekeji/MVueWebpack/blob/master/demo015/preview/apache-download.png)。
 
-4.2、配置开始：
+   配置开始：
 
-  4.2.1、编辑器打开 conf/httpd.conf 配置文件、开启rewrite_module模块（将前面的#号去掉）。
+  (1)、编辑器打开 conf/httpd.conf 配置文件、开启rewrite_module模块（将前面的#号去掉）。
 
   ```
   	#LoadModule remoteip_module modules/mod_remoteip.so
@@ -208,9 +210,9 @@ vue-cli项目的打包部署
 
   ```
 
-	编辑完成，保存文件。
+编辑完成，保存文件。
 
-	4.2.2、在根目录下面编写.htaccess文件，这里根目录为 ./htdocs.没有该文件就新建文件名为 .htaccess 的文件。
+	(2)、在根目录下面编写.htaccess文件，这里根目录为 ./htdocs.没有该文件就新建文件名为 .htaccess 的文件。
      加入下面的内容：当404时，显示的是根目录下index.html.
 
      ```
@@ -218,8 +220,8 @@ vue-cli项目的打包部署
 
      ```
 
-     编辑完成，保存文件。
+编辑完成，保存文件。
 
-  4.2.3、重启服务器，浏览器输入服务器不存在的文件路径，查看是否成功。
+  (3)、重启服务器，浏览器输入服务器不存在的文件路径，查看是否成功。
 
 
