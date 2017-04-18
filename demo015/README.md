@@ -152,6 +152,7 @@ vue-cli项目的打包部署
   和打包三 一样，vue-router 使用 history 模式都需要在服务端配置404，出现404后加载/webapp/index.html这个文件。
 
 4、404配置示例：
+----
 
 4.1、apache服务器，版本：httpd-2.4.25-x64，下载地址： http://www.apachehaus.com/cgi-bin/download.plx  ，下载完成后解压到某个目录下即可。
 
@@ -206,6 +207,7 @@ vue-cli项目的打包部署
   	</Directory>
   ```
 
+
 	编辑完成，保存文件。
 
 	4.2.2、在根目录下面编写.htaccess文件，这里根目录为 ./htdocs.没有该文件就新建文件名为 .htaccess 的文件。
@@ -214,6 +216,7 @@ vue-cli项目的打包部署
      ```
      ErrorDocument 404 /index.html
      ```
+
 
      编辑完成，保存文件。
 
