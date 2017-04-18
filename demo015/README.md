@@ -253,3 +253,18 @@ vue-cli项目的打包部署
 (2)、浏览器输入:http://localhost/asdfasdf,浏览器没有 asdfasdf 资源，即访问：http://localhost。
 
 
+4.3、Javaweb应用配置404，
+------------
+
+(1)、项目的web.xml文件加入
+
+  ```
+  <error-page>
+    <error-code>404</error-code>
+    <location>/index.html</location>
+  </error-page>
+  ```
+
+将index.html放置在跟目录下。
+
+(2)、浏览器输入:http://localhost/asdfasdf,浏览器没有 asdfasdf 资源，即访问：http://localhost。
