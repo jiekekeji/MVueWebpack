@@ -205,8 +205,8 @@ vue-cli项目的打包部署
   		#
   		Require all granted
   	</Directory>
-  ```
 
+  ```
 
 	编辑完成，保存文件。
 
@@ -215,8 +215,8 @@ vue-cli项目的打包部署
 
      ```
      ErrorDocument 404 /index.html
-     ```
 
+     ```
 
      编辑完成，保存文件。
 
