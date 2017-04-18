@@ -2,6 +2,7 @@
 ----------
 
 一、开发过程中配置跨域：
+
 1、在./config/index.js的dev区域的proxyTable区域加入如下内容，target为目标服务器地址：
 
     ```
@@ -35,3 +36,6 @@
     ```
 
 ![image](https://github.com/jiekekeji/MVueWebpack/blob/master/demo016/preview/icon-kua-yu.gif)
+
+
+二、发布过程中的跨域问题
