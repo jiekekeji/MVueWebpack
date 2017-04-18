@@ -247,7 +247,7 @@ vue-cli项目的打包部署
 
 保存后退出，重启或 nginx -s reload.
 
-(2)、浏览器输入:http://localhost/asdfasdf,浏览器没有 asdfasdf 资源，即访问：http://localhost。
+(2)、浏览器输入:http://localhost/asdfasdf,  浏览器没有 asdfasdf 资源，即访问：http://localhost。
 
 
 4.3、Javaweb应用配置404，
@@ -264,4 +264,4 @@ vue-cli项目的打包部署
 
 将index.html放置在跟目录下。
 
-(2)、浏览器输入:http://localhost/asdfasdf,浏览器没有 asdfasdf 资源，即访问：http://localhost。
+(2)、浏览器输入:http://localhost/asdfasdf,  浏览器没有 asdfasdf 资源，即访问：http://localhost/index.html。
