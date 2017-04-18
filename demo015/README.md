@@ -224,3 +224,32 @@ vue-cli项目的打包部署
 (3)、重启服务器，浏览器输入服务器不存在的文件路径，查看是否成功。
 
 
+4.2、nginx 服务器配置404，
+------------
+   版本：nginx-1.8.1，下载地址： http://nginx.org/en/download.html  ，下载完成后解压到某个目录下即可。
+
+![image](https://github.com/jiekekeji/MVueWebpack/blob/master/demo015/preview/nginx-download.png)
+
+配置开始：
+
+(1)、用编辑器打开nginx.conf文件。
+
+在http区域加入：
+
+  ```
+  fastcgi_intercept_errors on;
+  ```
+在server区域加入( http://localhost 为404时显示的地址):
+
+  ```
+  error_page 404 = http://localhost;
+  ```
+  修改Directory的AllowOverride为all，注意配置文件中有很多Directory，Directory一定是apache服务的根目录。
+
+  ```
+
+保存后退出，重启或 nginx -s reload.
+
+(2)、浏览器输入:http://localhost/asdfasdf,浏览器没有 asdfasdf 资源，即访问：http://localhost。
+
+
