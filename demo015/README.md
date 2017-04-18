@@ -244,9 +244,6 @@ vue-cli项目的打包部署
   ```
   error_page 404 = http://localhost;
   ```
-  修改Directory的AllowOverride为all，注意配置文件中有很多Directory，Directory一定是apache服务的根目录。
-
-  ```
 
 保存后退出，重启或 nginx -s reload.
 
@@ -256,7 +253,7 @@ vue-cli项目的打包部署
 4.3、Javaweb应用配置404，
 ------------
 
-(1)、项目的web.xml文件加入
+(1)、项目的web.xml文件加入，404时加载根目录下的index.html文件：
 
   ```
   <error-page>
