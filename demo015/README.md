@@ -158,7 +158,7 @@ vue-cli项目的打包部署
 ------
    版本：httpd-2.4.25-x64，下载地址： http://www.apachehaus.com/cgi-bin/download.plx  ，下载完成后解压到某个目录下即可。
 
-![image](https://github.com/jiekekeji/MVueWebpack/blob/master/demo015/preview/apache-download.png)。
+![image](https://github.com/jiekekeji/MVueWebpack/blob/master/demo015/preview/apache-download.png)
 
    配置开始：
 
@@ -212,7 +212,7 @@ vue-cli项目的打包部署
 
 编辑完成，保存文件。
 
-	(2)、在根目录下面编写.htaccess文件，这里根目录为 ./htdocs.没有该文件就新建文件名为 .htaccess 的文件。
+(2)、在根目录下面编写.htaccess文件，这里根目录为 ./htdocs.没有该文件就新建文件名为 .htaccess 的文件。
      加入下面的内容：当404时，显示的是根目录下index.html.
 
      ```
@@ -222,6 +222,6 @@ vue-cli项目的打包部署
 
 编辑完成，保存文件。
 
-  (3)、重启服务器，浏览器输入服务器不存在的文件路径，查看是否成功。
+(3)、重启服务器，浏览器输入服务器不存在的文件路径，查看是否成功。
 
 
