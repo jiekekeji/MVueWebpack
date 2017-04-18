@@ -2,9 +2,9 @@
 ----------
 
 一、开发过程中配置跨域：
-
+--------------
 1、在./config/index.js的dev区域的proxyTable区域加入如下内容，target为目标服务器地址：
-
+------------------------
     ```
         '/api': {
           target: 'http://www.tngou.net',
@@ -16,7 +16,7 @@
     ```
 
 2、请求示例，这里使用vue-resource做的请求示例。
-
+------------------------
     ```
      methods: {
           requstData1(){
@@ -39,9 +39,9 @@
 
 
 二、发布过程中的跨域问题
-
+--------------
 1、直接和后台接口应用放在同一个域名同一端口下，请求地址的形式如下，表示当前应用根目录下的 /tnfs/api/classify 资源:
-
+------------------------
   ```
   this.$http.get("/tnfs/api/classify").then(response => {
        this.msg = response.body;
@@ -50,14 +50,14 @@
   ```
 
 2、前端应用和后台接口应用不在同一域名同一端口下，
-
+------------------------
 ![image](https://github.com/jiekekeji/MVueWebpack/blob/master/demo016/preview/icon-server-proxy.png)
 
 
 三、常用静态资源服务器的简单配置示例：
-
+--------------
 1、apache服务器配置反向代理
-
+------------------------
 修改httpd.conf配置文件（./conf/httpd.conf），去掉以下三行前面 # 号，从而启用Apache proxy module。
 
    ```
@@ -94,7 +94,7 @@
 
 
 2、nginx配置反向代理
-
+------------------------
 在server区域加入：
 
    ```
