@@ -38,7 +38,7 @@
 ![image](https://github.com/jiekekeji/MVueWebpack/blob/master/demo016/preview/icon-kua-yu.gif)
 
 
-二、发布过程中的跨域问题
+二、发布过程中的跨域问题(服务端直接的请求是不存在跨域问题的)
 --------------
 1、直接和后台接口应用放在同一个域名同一端口下，请求地址的形式如下，表示当前应用根目录下的 /tnfs/api/classify 资源:
 ------------------------
