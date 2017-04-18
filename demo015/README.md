@@ -151,79 +151,72 @@ vue-cli项目的打包部署
 
   和打包三 一样，vue-router 使用 history 模式都需要在服务端配置404，出现404后加载/webapp/index.html这个文件。
 
-一、vue-router 使用 hash 模式
------
+4、404配置示例：
 
-   1、将项目部署在服务器的根目录下：
+4.1、apache服务器，版本：httpd-2.4.25-x64，下载地址： http://www.apachehaus.com/cgi-bin/download.plx  ，下载完成后解压到某个目录下即可。
 
-   默认build 即是使用vue-router 使用 hash 模式
+![image](https://github.com/jiekekeji/MVueWebpack/blob/master/demo015/preview/apache-download.png)。
 
-   1.1、apache服务器：
+4.2、配置开始：
 
+  4.2.1、编辑器打开 conf/httpd.conf 配置文件、开启rewrite_module模块（将前面的#号去掉）。
 
-   1.2、nginx服务器：
+  ```
+  	#LoadModule remoteip_module modules/mod_remoteip.so
+  	#LoadModule request_module modules/mod_request.so
+  	#LoadModule reqtimeout_module modules/mod_reqtimeout.so
+  	#开启rewrite_module模块
+  	LoadModule rewrite_module modules/mod_rewrite.so
+  	#LoadModule sed_module modules/mod_sed.so
+  	#LoadModule session_module modules/mod_session.so
+  	#LoadModule session_cookie_module modules/mod_session_cookie.so
+  ```
 
+  修改Directory的AllowOverride为all，注意配置文件中有很多Directory，Directory一定是apache服务的根目录。
 
-   1.3、tomcat服务器：
+  ```
+    DocumentRoot "${SRVROOT}/htdocs"
+  	<Directory "${SRVROOT}/htdocs">
+  		#
+  		# Possible values for the Options directive are "None", "All",
+  		# or any combination of:
+  		#   Indexes Includes FollowSymLinks SymLinksifOwnerMatch ExecCGI MultiViews
+  		#
+  		# Note that "MultiViews" must be named *explicitly* --- "Options All"
+  		# doesn't give it to you.
+  		#
+  		# The Options directive is both complicated and important.  Please see
+  		# http://httpd.apache.org/docs/2.4/mod/core.html#options
+  		# for more information.
+  		#
+  		Options Indexes FollowSymLinks
 
+  		#
+  		# AllowOverride controls what directives may be placed in .htaccess files.
+  		# It can be "All", "None", or any combination of the keywords:
+  		#   Options FileInfo AuthConfig Limit
+  		#
+  		#由原来的none改为All
+  		AllowOverride All
 
+  		#
+  		# Controls who can get stuff from this server.
+  		#
+  		Require all granted
+  	</Directory>
+  ```
 
-   2、将项目部署在服务器的非根目录下：
+	编辑完成，保存文件。
 
+	4.2.2、在根目录下面编写.htaccess文件，这里根目录为 ./htdocs.没有该文件就新建文件名为 .htaccess 的文件。
+     加入下面的内容：当404时，显示的是根目录下index.html.
 
-   2.1、apache服务器：
+     ```
+     ErrorDocument 404 /index.html
+     ```
 
+     编辑完成，保存文件。
 
-   2.2、nginx服务器：
-
-
-   2.3、tomcat服务器：
-
-
-
-
-
-二、vue-router 使用 history 模式
------
-
-1、将项目部署在服务器的根目录下：
-
-
-   1.1、apache服务器：
-
-
-   1.2、nginx服务器：
-
-
-   1.3、tomcat服务器：
-
-
-
-   2、将项目部署在服务器的非根目录下：
-
-
-   2.1、apache服务器：
-
-
-   2.2、nginx服务器：
-
-
-   2.3、tomcat服务器：
-
-
-三、跨域问题
-----
-
-   1、直接和数据接口应用放在同一域名，同一端口号下
-
-
-
-
-   2、采用反向代理的方式。
+  4.2.3、重启服务器，浏览器输入服务器不存在的文件路径，查看是否成功。
 
 
-   2.1、apache服务器
-
-
-
-   2.2、nginx服务器：
