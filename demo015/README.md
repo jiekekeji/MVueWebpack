@@ -1,5 +1,5 @@
 vue-cli项目的打包部署
-----
+------
 
    vue-cli项目的打包命令为:
 
@@ -10,7 +10,7 @@ vue-cli项目的打包部署
    默认的打包配置为：vue-router使用hash模式；打包后的文件需放在服务器的根目录。
 
 1、vue-router如何设置hash 模式和history 模式？
-
+----------
    vue-router 默认 hash 模式 —— 使用 URL 的 hash 来模拟一个完整的 URL.形如：http://localhost:8080/#/，  有一个#号和路由路径相隔。
 
    路由的 history 模式，利用 history.pushState API 来完成 URL 跳转而无须重新加载页面。URL形如：http://localhost:8080/page1.没有#号。
@@ -38,7 +38,7 @@ vue-cli项目的打包部署
 
 
 2、如何配置打包后服务器端存放的目录?
-
+----------
    通过配置./src/config/index.js文件build区域的 assetsPublicPath: '/',，配置打包目录：
 
    ```
@@ -66,19 +66,19 @@ vue-cli项目的打包部署
    ```
 
 3、几种情况的打包
-
+----------
   打包一、vue-router 使用 hash 模式,打包后的目录为根目录。
-
+------------
   无需修改配置文件，直接执行npm run build,将生成dist目录下的index.html、static拷贝到根录下即可。
 
   打包二、vue-router 使用 hash 模式,打包后的目录为非根目录。
-
+------------
   将./src/config/index.js文件build区域的 assetsPublicPath: '/',设置为具体目录，如需要将打包的文件放在服务器根目录下的webapp目录下。
 
   配置为：assetsPublicPath: '/webapp/',然后执行打包命令（npm run build），将生成dist目录下的index.html、static拷贝到webapp录下即可
 
   打包三、vue-router 使用 history 模式,打包后的目录为根目录。
-
+------------
   编辑文件./src/router/index.js，添加属性 mode: 'history',添加后如下：
 
      ```
@@ -117,7 +117,7 @@ vue-cli项目的打包部署
 ![image](https://github.com/jiekekeji/MVueWebpack/blob/master/demo015/preview/history-root-ok.gif)
 
   打包四、vue-router 使用 history 模式,打包后的目录为非根目录。例：打包后需放在webapp目录下，
-
+------------
   ./src/config/index.js文件build区域的 assetsPublicPath: '/，配置为：assetsPublicPath: '/webapp/',
 
   同时在./src/router/index.js，添加属性  base: '/webapp/',添加后如下：
@@ -152,10 +152,10 @@ vue-cli项目的打包部署
   和打包三 一样，vue-router 使用 history 模式都需要在服务端配置404，出现404后加载/webapp/index.html这个文件。
 
 4、404配置示例：
-----
+-----------
 
 4.1、apache服务器，
-------
+------------
    版本：httpd-2.4.25-x64，下载地址： http://www.apachehaus.com/cgi-bin/download.plx  ，下载完成后解压到某个目录下即可。
 
 ![image](https://github.com/jiekekeji/MVueWebpack/blob/master/demo015/preview/apache-download.png)
