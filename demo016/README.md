@@ -1,30 +1,37 @@
-# demo016
+跨域问题
+----------
 
-> A Vue.js project
+一、开发过程中配置跨域：
+1、在./config/index.js的dev区域的proxyTable区域加入如下内容，target为目标服务器地址：
 
-## Build Setup
+    ```
+        '/api': {
+          target: 'http://www.tngou.net',
+          changeOrigin: true,
+          pathRewrite: {
+            '^/api': ''
+          }
+        }
+    ```
 
-``` bash
-# install dependencies
-npm install
+2、请求示例，这里使用vue-resource做的请求示例。
 
-# serve with hot reload at localhost:8080
-npm run dev
+    ```
+     methods: {
+          requstData1(){
+            this.$http.get('http://www.tngou.net/tnfs/api/classify').then(response => {
+              this.msg = response.body;
+            }, response => {
+            });
+          },
+          //将请求转发到上一步配置的 target 值
+          requstData2(){
+            this.$http.get("/api"+"/tnfs/api/classify").then(response => {
+              this.msg = response.body;
+            }, response => {
+            });
+          }
+        }
+    ```
 
-# build for production with minification
-npm run build
-
-# build for production and view the bundle analyzer report
-npm run build --report
-
-# run unit tests
-npm run unit
-
-# run e2e tests
-npm run e2e
-
-# run all tests
-npm test
-```
-
-For detailed explanation on how things work, checkout the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+![image](https://github.com/jiekekeji/MVueWebpack/blob/master/demo016/preview/icon-kua-yu.gif)
