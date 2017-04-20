@@ -7,7 +7,6 @@
 
 第一种实现方式:在original目录下，新建html1.html,添加如下内容
     ```
-    <!DOCTYPE html>
     <html lang="en">
     <head>
         <meta charset="UTF-8">
