@@ -157,4 +157,4 @@
 
 先划分页面结构如下:
 
-![image](https://github.com/jiekekeji/MVueWebpack/blob/master/demo002/preview/icon-demo002-2.gif)
+![image](https://github.com/jiekekeji/MVueWebpack/blob/master/demo002/preview/icon-demo002-2.png)
