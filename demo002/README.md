@@ -153,3 +153,8 @@
 实现完毕，出现大量冗余代码，以后需要修改头部和顶部，每个页面都要改动。
 
 
+第二种实现方式：
+
+先划分页面结构如下:
+
+![image](https://github.com/jiekekeji/MVueWebpack/blob/master/demo002/preview/icon-demo002-2.gif)
