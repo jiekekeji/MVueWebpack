@@ -27,7 +27,7 @@ cnpm install vue-router --s
 
 ```
 
-2、在./src/components新建Home.vue组件，编辑如下：
+3、在./src/components新建Home.vue组件，编辑如下：
 
 ```
 <template>
@@ -55,10 +55,63 @@ cnpm install vue-router --s
     background-color: darkseagreen;
   }
 </style>
+```
+
+4、在./src/components新建Page2.vue组件，Page2下有子路由入口<router-view></router-view>，添加编辑如下：
+
+```
+<template>
+  <div>
+    <ul class="menu">
+      <li>
+        <router-link to="/page2/content1">菜单1</router-link>
+      </li>
+      <li>
+        <router-link to="/page2/content2">菜单2</router-link>
+      </li>
+    </ul>
+
+    <router-view></router-view>
+
+  </div>
+</template>
+
+<script>
+  export default {
+    data () {
+      return {}
+    }
+  }
+</script>
+
+<style scoped>
+  .menu {
+    height: 60px;
+    list-style: none;
+    background-color: beige;
+  }
+
+  .menu > li {
+    height: 100%;
+    width: 120px;
+    float: left;
+    border: 1px solid seashell;
+  }
+
+  .menu > li > a {
+    height: 100%;
+    width: 100%;
+    text-align: center;
+    line-height: 60px;
+    display: block;
+  }
+</style>
 
 ```
 
-2、在./src目录下新建目录router,加入文件index.js,该文件是路由的配置文件，如下：
+5、在./src/components新建Content1,Content2组件。
+
+6、在./src目录下新建目录router,加入文件index.js,该文件是路由的配置文件，如下：
 
 ```
 import Vue from 'vue'
@@ -72,21 +125,26 @@ Vue.use(Router)
 
 export default new Router({
   routes: [
+    // 当路径为 "/" 时，在最顶层的<router-view></router-view>中渲染Home组件，
+    // 当前项目App.vue中的<router-view></router-view>
     {
       path: '/',
       name: 'Home',
       component: Home
     },
+    // 当路径为 "/page2" 时，在最顶层的<router-view></router-view>中渲染Page2组件，
     {
       path: '/page2',
       name: 'Page2',
       component: Page2,
       children: [
+        // 当路径为 "/page2/content1" 时，在Page2组件的<router-view></router-view>中渲染Content1组件，
         {
           path: 'content1',
           name: 'Content1',
           component: Content1
         },
+        // 当路径为 "/page2/content2" 时，在Page2组件的<router-view></router-view>中渲染Content2组件，
         {
           path: 'content2',
           name: 'Content2',
@@ -98,3 +156,25 @@ export default new Router({
 })
 
 ```
+
+7、在main.js中配置路由
+
+```
+import Vue from 'vue'
+import App from './App'
+import router from './router'
+
+Vue.config.productionTip = false
+
+/* eslint-disable no-new */
+new Vue({
+  el: '#app',
+  router,
+  template: '<App/>',
+  components: { App }
+})
+```
+
+最后 npm run dev,启动项目。
+
+9、
