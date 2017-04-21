@@ -4,6 +4,7 @@
         <!--顶部导航-->
         <NavTop></NavTop>
 
+        <!--中间切换部分-->
         <router-view></router-view>
 
         <!--顶部导航-->
