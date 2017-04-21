@@ -2,9 +2,8 @@
   <div>
     <h4 class="title">这是主页</h4>
     <p>
-      <router-link to="/page2">到Page2页面</router-link>
+      <router-link to="/page2/content1">到Page2页面</router-link>
     </p>
-
   </div>
 </template>
 
