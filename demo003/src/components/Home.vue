@@ -1,24 +1,26 @@
 <template>
-    <div class="content">
-        首页内容
-    </div>
+  <div>
+    <h4 class="title">这是主页</h4>
+    <p>
+      <router-link to="/page2">到Page2页面</router-link>
+    </p>
+
+  </div>
 </template>
-<style scoped>
-    .content {
-        width: 100%;
-        height: 600px;
-        margin: 0 auto;
-        line-height: 120px;
-        text-align: center;
-    }
-</style>
+
 <script>
-    export default{
-        data(){
-            return {
-                msg: 'hello vue'
-            }
-        },
-        components: {}
+  export default {
+    data () {
+      return {}
     }
+  }
 </script>
+
+<style scoped>
+  .title {
+    height: 60px;
+    line-height: 60px;
+    text-indent: 10px;
+    background-color: darkseagreen;
+  }
+</style>
