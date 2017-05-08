@@ -1,53 +1,71 @@
 <template>
   <div class="hello">
-    <h1>{{ msg }}</h1>
-    <h2>Essential Links</h2>
-    <ul>
-      <li><a href="https://vuejs.org" target="_blank">Core Docs</a></li>
-      <li><a href="https://forum.vuejs.org" target="_blank">Forum</a></li>
-      <li><a href="https://gitter.im/vuejs/vue" target="_blank">Gitter Chat</a></li>
-      <li><a href="https://twitter.com/vuejs" target="_blank">Twitter</a></li>
-      <br>
-      <li><a href="http://vuejs-templates.github.io/webpack/" target="_blank">Docs for This Template</a></li>
-    </ul>
-    <h2>Ecosystem</h2>
-    <ul>
-      <li><a href="http://router.vuejs.org/" target="_blank">vue-router</a></li>
-      <li><a href="http://vuex.vuejs.org/" target="_blank">vuex</a></li>
-      <li><a href="http://vue-loader.vuejs.org/" target="_blank">vue-loader</a></li>
-      <li><a href="https://github.com/vuejs/awesome-vue" target="_blank">awesome-vue</a></li>
-    </ul>
+
+    <div class="box-upload">
+      <input id="upload-input" @change="handleFileChange" ref="inputer" type="file"/>
+      <label for="upload-input">选择文件</label>
+    </div>
+
   </div>
 </template>
 
 <script>
-export default {
-  name: 'hello',
-  data () {
-    return {
-      msg: 'Welcome to Your Vue.js App'
+  export default {
+    name: 'hello',
+    data () {
+      return {
+        msg: 'Welcome to Your Vue.js App'
+      }
+    },
+    methods: {
+      handleFileChange (e) {
+        let inputDOM = this.$refs.inputer;
+        // 通过DOM取文件数据
+        this.file = inputDOM.files[0];
+        this.errText = '';
+
+        console.log("file", inputDOM.files[0]);
+
+        let size = Math.floor(this.file.size / 1024);
+
+        // 触发这个组件对象的input事件
+        this.$emit('input', this.file);
+
+        // 这里就可以获取到文件的名字了
+        this.fileName = this.file.name;
+
+        // 这里加个回调也是可以的
+        this.onChange && this.onChange(this.file, inputDOM.value);
+
+      },
     }
+
   }
-}
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-h1, h2 {
-  font-weight: normal;
-}
 
-ul {
-  list-style-type: none;
-  padding: 0;
-}
+  .box-upload {
+    height: 80px;
+    width: 160px;
+    background-color: lightblue;
+    position: relative;
+  }
 
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
+  .box-upload > label {
+    position: absolute;
+    top: 0;
+    display: block;
+    height: 80px;
+    width: 160px;
+    background-color: lavenderblush;
+    line-height: 80px;
+  }
 
-a {
-  color: #42b983;
-}
+  .box-upload > input {
+    height: 0px;
+    width: 0px;
+  }
+
 </style>
