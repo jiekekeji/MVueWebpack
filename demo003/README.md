@@ -3,6 +3,9 @@ vue-初识路由vue-router 2
 
 ![image](https://github.com/jiekekeji/MVueWebpack/blob/master/demo003/preview/icon-demo003-result.gif)
 
+vue-router 2的使用
+-------------------------
+
 1、安装路由：
 
 ```
@@ -33,8 +36,11 @@ cnpm install vue-router --s
 <template>
   <div>
     <h4 class="title">这是主页</h4>
-    <p>
-      <router-link to="/page2/content1">到Page2页面</router-link>
+    <p class="nav-page">
+      <router-link to="/page1">到Page1页面</router-link>
+    </p>
+    <p class="nav-page">
+      <router-link to="/page2">到Page2页面</router-link>
     </p>
   </div>
 </template>
@@ -54,10 +60,46 @@ cnpm install vue-router --s
     text-indent: 10px;
     background-color: darkseagreen;
   }
+
+  .nav-page {
+    line-height: 60px;
+    height: 60px;
+    width: 180px;
+    text-align: center;
+    background-color: burlywood;
+  }
 </style>
 ```
 
-4、在./src/components新建Page2.vue组件，Page2下有子路由入口<router-view></router-view>，添加编辑如下：
+4、在./src/components新建Page1.vue组件，添加的内容如下：
+
+```
+<template>
+  <div>
+    <h4 class="title">这是Page1</h4>
+  </div>
+</template>
+
+<script>
+  export default {
+    data () {
+      return {}
+    }
+  }
+</script>
+
+<style scoped>
+  .title {
+    height: 60px;
+    line-height: 60px;
+    text-indent: 10px;
+    background-color: blanchedalmond;
+  }
+</style>
+
+```
+
+5、在./src/components新建Page2.vue组件，Page2下有子路由入口<router-view></router-view>，添加编辑如下：
 
 ```
 <template>
@@ -106,12 +148,21 @@ cnpm install vue-router --s
     display: block;
   }
 </style>
-
 ```
 
-5、在./src/components新建Content1,Content2组件。
+6、在./src/components新建Page2的子组件Content1,Content2：
 
-6、在./src目录下新建目录router,加入文件index.js,该文件是路由的配置文件，如下：
+7、路由的过程：
+
+![image](https://github.com/jiekekeji/MVueWebpack/blob/master/demo003/preview/123.png)
+
+![image](https://github.com/jiekekeji/MVueWebpack/blob/master/demo003/preview/456.png)
+
+![image](https://github.com/jiekekeji/MVueWebpack/blob/master/demo003/preview/789.png)
+
+
+
+在./src目录下新建目录router,加入文件index.js,该文件是路由的配置文件，如下：
 
 ```
 import Vue from 'vue'
