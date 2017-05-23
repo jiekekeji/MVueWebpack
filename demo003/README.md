@@ -162,15 +162,16 @@ cnpm install vue-router --s
 
 
 
-在./src目录下新建目录router,加入文件index.js,该文件是路由的配置文件，如下：
+路由的配置过程：在./src目录下新建目录router,加入文件index.js,该文件是路由的配置文件，如下：
 
 ```
 import Vue from 'vue'
 import Router from 'vue-router'
 import Home from '../components/Home.vue'
+import Page1 from '../components/Page1.vue'
+import Page2 from '../components/Page2.vue'
 import Content1 from '../components/Content1.vue'
 import Content2 from '../components/Content2.vue'
-import Page2 from '../components/Page2.vue'
 
 Vue.use(Router)
 
@@ -182,6 +183,12 @@ export default new Router({
       path: '/',
       name: 'Home',
       component: Home
+    },
+    // 当路径为 "/page1" 时，在最顶层的<router-view></router-view>中渲染Page1组件，
+    {
+      path: '/page1',
+      name: 'Page1',
+      component: Page1,
     },
     // 当路径为 "/page2" 时，在最顶层的<router-view></router-view>中渲染Page2组件，
     {
@@ -208,7 +215,7 @@ export default new Router({
 
 ```
 
-7、在main.js中配置路由
+8、在main.js中配置路由
 
 ```
 import Vue from 'vue'

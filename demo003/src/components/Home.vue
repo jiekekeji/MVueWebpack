@@ -5,7 +5,7 @@
       <router-link to="/page1">到Page1页面</router-link>
     </p>
     <p class="nav-page">
-      <router-link to="/page2/content1">到Page2页面</router-link>
+      <router-link to="/page2">到Page2页面</router-link>
     </p>
   </div>
 </template>
