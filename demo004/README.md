@@ -1,3 +1,4 @@
-嵌套路由的一个小例子:
+vue-组件生命周期和路由的钩子函数:
+--------------------------------
 
 ![image](https://github.com/jiekekeji/MVueWebpack/blob/master/demo004/preview/123.gif)

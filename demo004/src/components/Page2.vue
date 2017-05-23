@@ -1,46 +1,46 @@
 <template>
-    <div class="footer">
-        <div class="title">
-            <div class="name">这是Page2组件</div>
-            <router-link to="/Page3" class="nav">切换到Page3页面</router-link>
-        </div>
-    </div>
+  <div>
+    <ul class="menu">
+      <li>
+        <router-link to="/page2/content1">菜单1</router-link>
+      </li>
+      <li>
+        <router-link to="/page2/content2">菜单2</router-link>
+      </li>
+    </ul>
+
+    <router-view></router-view>
+
+  </div>
 </template>
-<style scoped>
-    .title {
-        position: relative;
-        width: 100%;
-        height: 80px;
-        background-color: darkkhaki;
-    }
 
-    .title > .name {
-        height: 80px;
-        display: inline-block;
-        text-align: center;
-        line-height: 80px;
-        font-size: 28px;
-    }
-
-    .title > .nav {
-        right: 10px;
-        position: absolute;
-        display: inline-block;
-        float: right;
-        text-align: center;
-        line-height: 80px;
-        font-size: 28px;
-        height: 80px;
-    }
-
-</style>
 <script>
-    export default{
-        data(){
-            return {
-                msg: 'hello vue'
-            }
-        },
-        components: {}
+  export default {
+    data () {
+      return {}
     }
+  }
 </script>
+
+<style scoped>
+  .menu {
+    height: 60px;
+    list-style: none;
+    background-color: beige;
+  }
+
+  .menu > li {
+    height: 100%;
+    width: 120px;
+    float: left;
+    border: 1px solid seashell;
+  }
+
+  .menu > li > a {
+    height: 100%;
+    width: 100%;
+    text-align: center;
+    line-height: 60px;
+    display: block;
+  }
+</style>
