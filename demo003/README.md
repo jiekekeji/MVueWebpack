@@ -233,6 +233,6 @@ new Vue({
 })
 ```
 
-最后 npm run dev,启动项目。
+9、最后 npm run dev,启动项目。
 
-9、
+
