@@ -9,7 +9,7 @@
     export default{
         data(){
             return {
-                msg: this.$route.query.msg1,
+                msg1: this.$route.query.msg1,
                 //注意这里使用的是params,和msg1的query不同
                 msg2: this.$route.params.msg2,
                 msg3: this.$route.query.msg3

@@ -8,7 +8,7 @@
                     <router-link to="/page1">跳转到Page1组件不带参数</router-link>
                 </li>
                 <li>
-                    <router-link to="/page2?msg=声明式导航传值">跳转到Page2组件携带参数msg1</router-link>
+                    <router-link to="/page2?msg1=声明式导航传值">跳转到Page2组件携带参数msg1</router-link>
                 </li>
                 <li>
                     <input placeholder="参数msg的值" v-model="param1"/>
