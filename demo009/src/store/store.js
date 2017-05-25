@@ -3,34 +3,33 @@
  */
 import Vue from 'vue'
 import Vuex from 'vuex'
-
 Vue.use(Vuex);
-
 const store = new Vuex.Store({
-    state: {
-        count: 0,
-        stu: {
-            name: 'jack',
-            age: 50
-        }
+  state: {
+    isLogin: false,
+    count: 0,
+    name: "jack"
+  },
+  getters: {
+    getIsLogin: state => {
+      return state.isLogin;
     },
-    mutations: {
-        increment (state) {
-            state.count++;
-        },
-        incrementn (state, n) {
-            state.count = state.count + n
-        },
-        incrementobj (state, obj) {
-            state.count = state.count + obj.amount
-        },
-        setStu(state, mstu){
-            state.stu.name = mstu.name;
-            state.stu.age = mstu.age;
-        }
+    getCount: state => {
+      return state.count / 2;
     },
-    actions: {}
+  },
+  mutations: {
+    //提供一个对外改变count的函数
+    increase (state) {
+      state.count++;
+      //这里模拟一下 根据count变更isLogin
+      if (state.count % 2 == 0) {
+        state.isLogin = true;
+      } else {
+        state.isLogin = false;
+      }
+    },
+  },
+  actions: {}
 })
-
-
 export default store;

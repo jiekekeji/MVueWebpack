@@ -1,54 +1,55 @@
 <template>
-    <div class="nav">
-        这是Page2组件
-        <button v-on:click="changePage1">改变Page1组件中msg的值,不带参数</button>
-        <button v-on:click="changePage1ByPara">改变Page1组件中msg的值，带参数</button>
-        <button v-on:click="changePage1ByObj">改变Page1组件中msg的值，对象风格提交</button>
-        <button v-on:click="changePage1Stu">改变Page1组件中姓名和年龄</button>
+  <div class="container">
+    <h2>这是Page2.vue组件</h2>
+    <div class="container">
+      <p>通过mapState获取多个状态</p>
+      <p>获取store中的count值count={{localCount}}</p>
+      <p>获取store中的isLogin值isLogin={{isLogin}}</p>
     </div>
+    <div class="container">
+      <p>通过mapGetters获取多个状态</p>
+      <p>获取store中的count值count={{localCount}}</p>
+      <p>获取store中的isLogin值isLogin={{isLogin}}</p>
+    </div>
+  </div>
 </template>
-
 <script>
-    import store from '../store/store'
-    export default {
-        name: 'topnav',
-        data () {
-            return {
-                msg: 'Welcome to Your Vue.js App',
-            }
-        },
-        methods: {
-            changePage1: function () {
-                //提交mutations
-                store.commit('increment');
-            },
-            changePage1ByPara: function () {
-                //带参数的
-                store.commit('incrementn', 3);
-            },
-            changePage1ByObj: function () {
-                store.commit({
-                    type: 'incrementobj',
-                    amount: 10
-                });
-            },
-            changePage1Stu: function () {
-                store.commit({
-                    type: 'setStu',
-                    name: 'rose',
-                    age: 90
-                });
-            }
-        },
-    }
-</script>
+  //  import store from '../store/store';
+  import {mapGetters} from 'vuex'
+  import {mapState} from 'vuex'
+  export default{
+    data(){
+      return {}
+    },
+    components: {},
+    methods: {},
+    computed: {
+      ...mapState({
+        //将state中对个值映射为当前组件的computed属性
+        //类似写多个computed获取值
+        //相当于在computed中定义了localCount属性
+        localCount: "count",
+        isLogin: state => state.isLogin,
 
+      }),
+      ...mapGetters([
+          "getIsLogin",
+          "getCount"
+        ]
+      )
+    },
+
+  }
+</script>
 <style scoped>
-    .nav {
-        height: 100px;
-        width: 100%;
-        text-align: center;
-        line-height: 100px;
-        background-color: antiquewhite;
-    }
+  .container {
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+    border: 1px solid green;
+  }
+
+  h2 {
+    background-color: darkseagreen;
+  }
 </style>
