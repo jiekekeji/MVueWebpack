@@ -1,38 +1,38 @@
 <template>
-    <div class="nav">
-        这是Page2组件
-        <button v-on:click="skip2Page3">改变Page1组件中msg的值</button>
+    <div class="container">
+        <h2>这是Page2.vue组件</h2>
+        <p>获取state中的值count={{scount}}</p>
+        <button v-on:click="changeCount">改变state中count的值:不带参数</button>
     </div>
 </template>
-
 <script>
     import store from '../store/store'
     export default {
-        name: 'topnav',
         data () {
             return {
-                msg: 'Welcome to Your Vue.js App',
+            }
+        },
+        computed: {
+            scount () {
+                return store.state.count
             }
         },
         methods: {
-            skip2Page3: function () {
-                //提交mutations
+            changeCount: function () {
                 store.commit('increment');
-                //或者直接改变count的值
-                store.state.count++;
-
-                console.log(store.state.count);
             }
         },
     }
 </script>
 
 <style scoped>
-    .nav {
-        height: 100px;
-        width: 100%;
-        text-align: center;
-        line-height: 100px;
-        background-color: antiquewhite;
+    .container {
+        height: auto;
+        overflow: hidden;
+        background-color: lightgray;
+    }
+
+    h2 {
+        background-color: lightblue;
     }
 </style>
