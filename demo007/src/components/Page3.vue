@@ -1,23 +1,24 @@
 <template>
-    <div class="footer">
-        这是Page3内容
+    <div class="container">
+        <h2>这是page3</h2>
+        <router-link to="/">跳转到page1</router-link>
     </div>
 </template>
-<style scoped>
-    .footer {
-        height: 120px;
-        width: 100%;
-        text-align: center;
-        line-height: 120px;
-    }
-</style>
 <script>
     export default{
         data(){
-            return {
-                msg: 'hello vue'
-            }
+            return {}
         },
         components: {}
     }
 </script>
+<style scoped>
+    .container {
+        width: 100%;
+        height: auto;
+    }
+
+    h2 {
+        background-color: lightblue;
+    }
+</style>
