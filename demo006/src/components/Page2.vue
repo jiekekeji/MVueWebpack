@@ -1,46 +1,70 @@
 <template>
-    <div class="nav">
-        这是Page2组件
-        <button v-on:click="skip2Page3">跳转到page3</button>
+    <div class="container">
+        <p>这是page2.vue 分发Actions</p>
+        <button @click="change(1)">无参数分发改变count</button>
+        <button @click="change(2)">参数分发改变count</button>
+        <button @click="change(3)">对象参数分发改变count和isLogin</button>
+        <button @click="change(4)">对象风格形式的分发改变count和isLogin</button>
+        <button @click="increment()">使用mapActions形式的分发改变count</button>
     </div>
 </template>
 
 <script>
+    import {mapActions} from 'vuex'
     export default {
-        name: 'topnav',
         data () {
-            return {
-                msg: 'Welcome to Your Vue.js App',
-            }
-        },
-        beforeRouteEnter (to, from, next) {
-            // 在渲染该组件的对应路由被 confirm 前调用
-            // 不！能！获取组件实例 `this`
-            // 因为当钩子执行前，组件实例还没被创建
-            console.log('Page2组件内钩子:beforeRouteEnter');
-            //放行next();或跳转到其他的组件next('/Page3')
-            next();
-        },
-        beforeRouteLeave (to, from, next) {
-            // 导航离开该组件的对应路由时调用
-            // 可以访问组件实例 `this`
-            console.log('Page2组件内钩子:beforeRouteLeave');
-            //放行next();或跳转到其他的组件next('/Page3')
-            next();
+            return {}
         },
         methods: {
-            skip2Page3: function () {
-                this.$router.push({path: 'Page3'});
-            }
+            change(index){
+                switch (index) {
+                    case 1:
+                        //无参数提交
+                        this.$store.dispatch('increment');
+                        break;
+                    case 2:
+                        //参数提交
+                        this.$store.dispatch('incrementByParam', 10);
+                        break;
+                    case 3:
+                        //对象参数
+                        let obj1 = {};
+                        obj1.count = 15;
+                        if (this.$store.state.isLogin) {
+                            obj1.isLogin = false;
+                        } else {
+                            obj1.isLogin = true;
+                        }
+                        this.$store.dispatch('incrementByObj', obj1);
+                        break;
+                    case 4:
+                        //对象风格形式的提交
+                        let obj2 = {};
+                        obj2.count = 15;
+                        if (this.$store.state.isLogin) {
+                            obj2.isLogin = false;
+                        } else {
+                            obj2.isLogin = true;
+                        }
+                        obj2.type = "incrementByObj";
+                        this.$store.dispatch(obj2);
+                        break;
+                }
+            },
+            ...mapActions([
+                // 映射 this.increment() 为 this.$store.dispatch('increment')
+                'increment'
+            ]),
         },
     }
 </script>
 
 <style scoped>
-    .nav {
-        height: 100px;
+    .container {
+        margin-top: 20px;
+        border-top: 1px solid green;
+        height: auto;
         width: 100%;
-        text-align: center;
-        line-height: 100px;
+        overflow: hidden;
     }
 </style>
