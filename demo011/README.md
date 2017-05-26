@@ -3,7 +3,7 @@
 
 ![image](https://github.com/jiekekeji/MVueWebpack/blob/master/demo011/preview/011.gif)
 
-![image](https://github.com/jiekekeji/MVueWebpack/blob/master/demo011/preview/011-1.gif)
+![image](https://github.com/jiekekeji/MVueWebpack/blob/master/demo011/preview/011-1.png)
 
 一、父组件传递给子组件
 
