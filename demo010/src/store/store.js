@@ -1,6 +1,3 @@
-/**
- * Created by Administrator on 2017/1/20.
- */
 import Vue from 'vue'
 import Vuex from 'vuex'
 
@@ -9,54 +6,36 @@ Vue.use(Vuex);
 const store = new Vuex.Store({
     state: {
         count: 0,
-        stu: {
-            name: 'jack',
-            age: 50
-        }
+        isLogin: false
     },
     mutations: {
+        //无参数
         increment (state) {
             state.count++;
         },
-        incrementn (state, n) {
-            state.count = state.count + n
+        //有参数
+        incrementByParam (state, param) {
+            state.count = state.count + param;
         },
-        incrementobj (state, obj) {
-            state.count = state.count + obj.amount
+        //对象作为参数
+        incrementByObj (state, obj) {
+            state.count = state.count + obj.count;
+            state.isLogin = obj.isLogin;
         },
-        setStu(state, mstu){
-            state.stu.name = mstu.name;
-            state.stu.age = mstu.age;
-        }
     },
     actions: {
-        aincrement (context) {
-            console.log('actions=aincrement');
-            //可执行异步操作
-            setTimeout(function () {
-                //提交到mutations
-                context.commit('increment');
-            }, 1000 * 2)
-
+        //无参数
+        increment (context) {
+            context.commit("increment");
         },
-        aincrementn (context, n) {
-            context.commit('incrementn', 3);
+        //有参数
+        incrementByParam (context, param) {
+            context.commit("incrementByParam", param)
         },
-        aincrementobj (context, obj) {
-            context.commit({
-                type: 'incrementobj',
-                amount: 10
-            });
+        //对象作为参数
+        incrementByObj (context, obj) {
+            context.commit("incrementByObj", obj)
         },
-        asetStu(context, mstu){
-            context.commit({
-                type: 'setStu',
-                name: 'rose',
-                age: 90
-            });
-        }
     }
 })
-
-
 export default store;
