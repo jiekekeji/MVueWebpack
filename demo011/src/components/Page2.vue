@@ -1,29 +1,32 @@
 <template>
-    <div class="nav">
-        <h1>这是Page2组件</h1>
-        <div><label>接收父组件的传值:</label>{{inputValue}}</div>
+    <div>
+        <h3>这是Page2组件</h3>
+        <div>
+            <label>传值给父组件:</label>
+            <input v-model="c32pValue">
+        </div>
     </div>
 </template>
 
 <script>
-    export default {
-        data () {
-            return {}
+    export default{
+        data(){
+            return {
+                c32pValue: 0,
+            }
         },
-        methods: {},
-        props: {
-            inputValue: ''
+        components: {},
+        methods: {
+            toParent(data){
+                this.$emit('child-say', data);
+            }
         },
-        watch: {}
+        watch: {
+            'c32pValue': function () {
+                this.toParent(this.c32pValue);
+            }
+        }
     }
 </script>
-
 <style scoped>
-    .nav {
-        height: 100px;
-        width: 100%;
-        text-align: center;
-        line-height: 50px;
-        background-color: antiquewhite;
-    }
 </style>
