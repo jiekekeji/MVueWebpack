@@ -1,15 +1,16 @@
 <template>
     <div class="content">
-        <ul style="height: auto;width: 100%">
-            <li v-for="item in list" style="height: auto;width: 100%;text-align: center;line-height: 50px;background-color: antiquewhite;">
-                {{item.id}}
+        <ul>
+            <li v-for="item in list" style="background-color: antiquewhite;">
+                <span>{{item.id}}</span>
                 <ul>
-                    <li @click="openTab(chil)" v-for="chil in item.chis" style="height: auto;width: 100%;text-align: center;line-height: 50px;background-color: gainsboro;">
-                        {{chil.id}}
+                    <li @click="openTab(chil)" v-for="chil in item.chis" style="background-color: gainsboro;">
+                        <span>{{chil.id}}</span>
                     </li>
                 </ul>
             </li>
         </ul>
+        <router-link to="/page2">数组分组的演示</router-link>
     </div>
 </template>
 
@@ -64,8 +65,7 @@
                 ]
             }
         },
-        components: {
-        },
+        components: {},
         computed: {},
         methods: {
             openTab(){
@@ -77,5 +77,18 @@
     }
 </script>
 <style scoped>
+    ul {
+        list-style: none;
+        height: auto;
+        width: 100%;
 
+    }
+
+    li {
+        list-style: none;
+        height: auto;
+        width: 100%;
+        text-align: center;
+        line-height: 50px;
+    }
 </style>
