@@ -1,44 +1,21 @@
-var loading = {
+let Loading = {};
 
-    //显示提示信息
-    show: function (element) {
+Loading.install = function (Vue, options) {
 
-        //1、如果未添加元素，添加元素
-        let container = element;
-        if (typeof  container === "undefined" || null === container) {
-            return;
-        }
-        element.style.position = "relative";
-        //2、判断是否已添加过
-        let loadingPrarents = document.getElementsByClassName("jk-loading-container");
-        let loadingPrarent = loadingPrarents[0];
-        if (typeof  loadingPrarent !== "undefined" && null !== loadingPrarent) {
-            loadingPrarent.style.display = "block";
-            return loadingPrarent;
-        }
+    Vue.prototype.$loading = function () {
+        console.log("$loading");
 
-        //3、添加元素
+        // 1、创建构造器，定义好提示信息的模板
+        let loadingEL = Vue.extend({
+            template: '<div class="jk-loading">' + options + '</div>'
+        });
 
-        //添加父级元素
-        loadingPrarent = document.createElement('div');
-        loadingPrarent.className = "jk-loading-container";
-        container.appendChild(loadingPrarent);
-        //添加loading图片父级
-        let loadingDiv = document.createElement('div');
-        loadingPrarent.appendChild(loadingDiv);
+        // 2、创建实例，挂载到文档
+        let el = new loadingEL().$mount().$el;
 
-        //添加loading图片
-        let loading = document.createElement('div');
-        loadingDiv.appendChild(loading);
-        return loadingPrarent;
-    },
-
-    //关闭加载提示
-    hide: function (loadingPrarent) {
-        if (typeof  loadingPrarent !== "undefined" && null !== loadingPrarent) {
-            loadingPrarent.style.display = "none";
-        }
+        //3、创建的实例挂在到body
+        document.body.appendChild(el);
     }
 }
 
-export {loading};
+module.exports = Loading;
