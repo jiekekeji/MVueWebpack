@@ -90,3 +90,13 @@ vue-自定义指令v-imgLoad,实现在图片加载过程中显示loading样式,�
     }
 </script>
 ```
+
+3、为防止指令在路由切换时重复执行钩子函数bind和inserted，可以在router-view外层加上<keep-alive>；
+
+```
+    <div id="app">
+        <keep-alive>
+            <router-view></router-view>
+        </keep-alive>
+    </div>
+```
