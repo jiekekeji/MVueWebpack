@@ -18,7 +18,7 @@
         methods: {},
         created(){
             console.log("loading");
-            console.log(this.$loading())
+            console.log(this.$loading("加载中..."))
         }
     }
 </script>
