@@ -1,14 +1,11 @@
 <template>
   <div>
-
-    <render-demo2 :level="level"></render-demo2>
-    <button @click="change()">显示和隐藏</button>
-
+    <render-demo3 :level="level"></render-demo3>
   </div>
 </template>
 
 <script>
-  import demo2 from "../render/demo2"
+  import demo2 from "../render/demo3"
   export default {
     data () {
       return {
