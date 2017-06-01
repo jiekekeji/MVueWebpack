@@ -46,7 +46,7 @@ Vue.component("render-demo", {
     }
   },
   methods: {
-    outTx(index){
+    outTx(event){
       console.log("outTx", event);
     },
   }
