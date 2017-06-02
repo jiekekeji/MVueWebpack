@@ -1,11 +1,14 @@
 <template>
   <div>
-    <render-demo1 :level="8"></render-demo1>
-
-    <br>
-    <router-link to="/hello2">render进阶 v-if v-for</router-link>
-    <br>
-    <router-link to="/hello3">render  JSX</router-link>
+    <div>
+      <!--使用demo1定义的组件 render-demo1-->
+      <render-demo1 :level="8"></render-demo1>
+    </div>
+    <div class="item">
+      <router-link to="/hello2">Render createElement之v-if</router-link>
+      <router-link to="/hello3">Render createElement之v-for</router-link>
+      <router-link to="/hello4">Render  JSX</router-link>
+    </div>
   </div>
 </template>
 
@@ -19,4 +22,21 @@
 </script>
 
 <style scoped>
+  a {
+    text-decoration: none;
+    line-height: 30px;
+    text-align: center;
+    height: 30px;
+    width: 280px;
+    display: block;
+    background-color: darkseagreen;
+  }
+
+  .item {
+    margin-top: 30px;
+  }
+
+  .item > a {
+    margin-top: 30px;
+  }
 </style>

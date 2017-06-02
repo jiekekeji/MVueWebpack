@@ -10,12 +10,19 @@ Vue.component("render-demo2", {
             container: true
           },
           style: {
-            height: "300px",
-            width: "300px"
+            width: "600px",
+            height: "400px",
           }
         },
         [
-          createElement("h2", "v-if的演示")
+          createElement("p", {
+              style: {
+                backgroundColor: "darkseagreen"
+              }
+            },
+            "v-if的演示:点击按钮按条件显示和隐藏红色块"
+          )
+          //如果this.level % 2 === 0没有红色块
         ]
       );
     } else {
@@ -24,24 +31,30 @@ Vue.component("render-demo2", {
             container: true
           },
           style: {
-            height: "300px",
-            width: "300px"
+            width: "600px",
+            height: "400px",
           }
         },
         [
-          //演示一下 v-for
-          createElement("ul", this.list.map(function (item) {
-            return createElement('li',
-              {
-                on: {
-                  click: () => {
-                    that.itemClick(item);
-                  }
-                }
-              },
-              "值:" + item
-            )
-          }))
+          createElement("p", {
+              style: {
+                backgroundColor: "darkseagreen"
+              }
+            },
+            "v-if的演示:点击按钮按条件显示和隐藏红色块"
+          ),
+          //如果this.level % 2 !== 0有红色块
+          createElement("div", {
+              style: {
+                backgroundColor: "red",
+                width: "150px",
+                height: "150px",
+                margin: " 0 auto",
+                "margin-top": "30px"
+              }
+            }
+          ),
+
         ]
       );
     }

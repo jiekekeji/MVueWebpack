@@ -12,8 +12,8 @@ Vue.component("render-demo1", {
           parent: false
         },
         style: {
-          width: "300px",
-          height: "300px",
+          width: "600px",
+          height: "400px",
         },
         attrs: {
           id: "first-el",
@@ -47,11 +47,21 @@ Vue.component("render-demo1", {
               backgroundColor: "beige"
             },
           },
-          //绑定props的level值
-          "父组件传递的参数:" + this.level
+          //绑定data值
+          this.desc
         ),
 
-        //节点3 试一下v-model
+        //节点3
+        createElement("p", {
+            style: {
+              backgroundColor: "beige"
+            },
+          },
+          //绑定props的level值
+          "1、父组件传递的参数:" + this.level
+        ),
+
+        //节点4 试一下v-model
         createElement('input', {
           domProps: {
             value: that.phoneNum
@@ -69,7 +79,7 @@ Vue.component("render-demo1", {
               backgroundColor: "beige"
             },
           },
-          "接收input的值:" + this.phoneNum
+          "2、接收input的值v-model:" + this.phoneNum
         ),
       ],
     )
@@ -77,7 +87,8 @@ Vue.component("render-demo1", {
 
   data () {
     return {
-      title: "render createElement 基本示例",
+      title: "Render createElement 基本示例",
+      desc: "样式、属性、类、事件、v-model、嵌套元素的写法",
       phoneNum: ""
     }
   },

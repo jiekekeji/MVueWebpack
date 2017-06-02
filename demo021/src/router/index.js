@@ -3,6 +3,7 @@ import Router from 'vue-router'
 import Hello1 from '@/components/Hello1'
 import Hello2 from '@/components/Hello2'
 import Hello3 from '@/components/Hello3'
+import Hello4 from '@/components/Hello4'
 
 Vue.use(Router)
 
@@ -22,6 +23,11 @@ export default new Router({
       path: '/hello3',
       name: 'Hello3',
       component: Hello3
+    },
+    {
+      path: "/hello4",
+      name: "Hello4",
+      component: Hello4
     }
   ]
 })
